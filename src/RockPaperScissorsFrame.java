@@ -53,7 +53,6 @@ public class RockPaperScissorsFrame extends JFrame {
         mainPanel.setLayout(new BorderLayout());
 
         //Add rest of the panels here
-
         mainPanel.add(choicePanel, BorderLayout.NORTH);
         mainPanel.add(statsPanel, BorderLayout.CENTER);
 
@@ -74,7 +73,7 @@ public class RockPaperScissorsFrame extends JFrame {
     Button Rock with icon
     Button Paper with icon
     Button Scissors with icon
-    Button quit
+    Button quit MOVED TO ITS OWN PLACE
      */
     public void createChoicePanel(){
         choicePanel = new JPanel();
@@ -243,24 +242,24 @@ public class RockPaperScissorsFrame extends JFrame {
         };
 
 
-        //TODO: Make sure that each condition has it's own thing "Rock BREAKS Scissors"
+
         if(((item == 0) && (computerItem == 2)) || ((item == 1) && (computerItem == 0)) || ((item == 2) && (computerItem == 1))){
             playerWins++;
             playerWinsCount.setText(Integer.toString(playerWins));
             displayResults.append(winMessages[item] + "(Player wins) \n");
-            //TODO: Add to stats panel
+
 
         } else if(((computerItem == 0) && (item == 2)) || ((computerItem == 1) && (item == 0)) || ((computerItem == 2) && (item == 1))){
             computerWins++;
             computerWinsCount.setText(Integer.toString(computerWins));
             displayResults.append(winMessages[computerItem] + "(Computer wins) \n");
-            //TODO: Add to stats panel
+
 
         } else {
             ties++;
             tiesCount.setText(Integer.toString(ties));
             displayResults.append("It's a tie! \n");
-            //TODO: Add to stats panel
+
 
         }
     }
